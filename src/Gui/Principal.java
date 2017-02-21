@@ -21,8 +21,7 @@ public class Principal extends javax.swing.JFrame {
     /**
      * Creates new form Principal
      */
-    public Principal()
-    {
+    public Principal() {
         setIconImage(new ImageIcon(getClass().getResource("/Img/icono.png")).getImage());
         initComponents();
     }
@@ -161,29 +160,22 @@ public class Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnEncriptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEncriptarActionPerformed
-        
+
         Operaciones op = new Operaciones();
         tblDatos.setModel(new DefaultTableModel());
         op.limpiar();
-        
-        
-        
+
         String mensaje = areaMensaje.getText();
-        
-        if(!mensaje.isEmpty())
-        {
+
+        if (!mensaje.isEmpty()) {
 //            op.encriptarContenido(mensaje);
             areaMensajeEncriptado.setText(op.encriptarContenido(mensaje));
             mostrar();
-        }
-        else
-        {
-            JOptionPane.showMessageDialog(null, "Debe introducior un mensaje","Alerta", JOptionPane.ERROR_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(null, "Debe introducior un mensaje", "Alerta", JOptionPane.ERROR_MESSAGE);
 //            JOptionPane.showMessageDialog(null, "Este es un mensaje de Advertencia","WARNING_MESSAGE", JOptionPane.WARNING_MESSAGE);
         }
-        
-        
-        
+
     }//GEN-LAST:event_btnEncriptarActionPerformed
 
     /**
@@ -193,7 +185,7 @@ public class Principal extends javax.swing.JFrame {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -234,12 +226,10 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTable tblDatos;
     // End of variables declaration//GEN-END:variables
 
-    public void mostrar()
-    {
-        Object[][] matriz = new Object [Operaciones.ascii.size()][5];
-        
-        for (int i = 0; i < Operaciones.ascii.size(); i++)
-        {
+    public void mostrar() {
+        Object[][] matriz = new Object[Operaciones.ascii.size()][5];
+
+        for (int i = 0; i < Operaciones.ascii.size(); i++) {
             matriz[i][0] = Operaciones.ascii.get(i);
             matriz[i][1] = Operaciones.binarios.get(i);
             matriz[i][2] = Operaciones.aplicandoAndConG.get(i);
@@ -247,12 +237,11 @@ public class Principal extends javax.swing.JFrame {
             matriz[i][4] = Operaciones.asciiFinal.get(i);
         }
         tblDatos.setModel(new javax.swing.table.DefaultTableModel(
-            matriz,
-            new String [] {
-                "ASCII", "Binario", "AND con g", "Corimiento 2 Izq", "ASCII Final"
-            }
+                matriz,
+                new String[]{
+                    "ASCII", "Binario", "AND con g", "Corimiento 2 Izq", "ASCII Final"
+                }
         ));
     }
 
 }
-
