@@ -49,6 +49,7 @@ public class Operaciones {
 
             valorConAnd = aplicarAndConLetraG(valorEnBinario);
 //            System.out.print(" valor con and " + valorConAnd + "\n");
+//            System.out.println("ASCCI" + this.binarioAAscii(valorConAnd));
             aplicandoAndConG.add(valorConAnd);
         }
         recorrerDosIzq();
@@ -63,13 +64,22 @@ public class Operaciones {
      */
     public String binarioACaracter() {
         int resultado = 0;
+        String asciiResultado = "";
         String aux = "";
         String mensajeEncriptado = "";
         for (int i = 0; i < tablaConRecorrido.size(); i++) {
             aux = (String) tablaConRecorrido.get(i);
             resultado = binarioAAscii(aux);
+
+            for (int j = 0; j < Diccionario.diccionario.length; j++) {
+                if (Integer.parseInt(Diccionario.diccionario[j][0]) == resultado) {
+                    System.out.println(Diccionario.diccionario[j][1]);
+                    asciiResultado = Diccionario.diccionario[j][1];
+                }
+
+            }
             asciiFinal.add(resultado);
-            mensajeEncriptado = mensajeEncriptado + (char) resultado;
+            mensajeEncriptado = mensajeEncriptado + asciiResultado;
 
         }
         return mensajeEncriptado;
@@ -143,6 +153,7 @@ public class Operaciones {
                 septeto = (String) aplicandoAndConG.get(i);
                 septetoSiguiente = (String) aplicandoAndConG.get(0);
                 resultado = septeto.substring(2, 7) + septetoSiguiente.substring(0, 2);
+                System.out.println(resultado);
             }
             tablaConRecorrido.add(resultado);
         }

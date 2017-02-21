@@ -191,7 +191,19 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEncriptarActionPerformed
 
     private void btnDesencriptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDesencriptarActionPerformed
-        // TODO add your handling code here:
+//        Operaciones op = new Operaciones();
+//        tblDatos.setModel(new DefaultTableModel());
+//        op.limpiar();
+//
+//        String mensaje = areaMensaje.getText();
+//
+//        /* Proceso de desencriptado */
+//        if (!mensaje.isEmpty()) {
+//            areaMensajeEncriptado.setText(op.encriptarContenido(mensaje));
+//            mostrar();
+//        } else {
+//            JOptionPane.showMessageDialog(null, "Debe introducior un mensaje", "Alerta", JOptionPane.ERROR_MESSAGE);
+//        }
     }//GEN-LAST:event_btnDesencriptarActionPerformed
 
     /**
