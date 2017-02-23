@@ -32,13 +32,15 @@ public class OpDesencriptado {
     public static ArrayList asciiFinal = new ArrayList<>();
 
     public static void main(String[] args) {
-        desencriptar("HOLA CRAYOLA");
+        desencriptar("HOLA MUNDO");
         limpiar();
     }
 
     public static String desencriptar(String mensaje) {
         int caracter_ascii = 0;
         String caracter_binario = "";
+        String binarios = "";
+        String binario_completo = "";
 
         char[] array = mensaje.toCharArray();
         for (int i = 0; i < array.length; i++) {
@@ -47,12 +49,11 @@ public class OpDesencriptado {
             array_ascii.add(caracter_ascii);
 
             caracter_binario = conversionBinario(caracter_ascii);
-            caracter_binario = completarBinarios(caracter_binario);
-            array_binarios.add(caracter_binario);
-
-            desplazarDerecha();
-
+            binario_completo = completarBinarios(caracter_binario);
+            array_binarios.add(binario_completo);
+            binarios += binario_completo;
         }
+        limpiar();
 
         return mensaje;
     }
@@ -74,7 +75,7 @@ public class OpDesencriptado {
     }
 
     public static String completarBinarios(String binario) {
-        String binario_completo = null;
+        String binario_completo = "";
         int faltantes = 0;
 
         if (binario.length() < 8) {
@@ -82,20 +83,10 @@ public class OpDesencriptado {
             for (int i = 0; i < faltantes; i++) {
                 binario_completo += "0";
             }
-
         }
         binario_completo += binario;
 
         return binario_completo;
-    }
-
-    public static String desplazarDerecha() {
-        String binario = "";
-        for (int i = 0; i < array_binarios.size(); i++) {
-            binario += array_binarios.get(i);
-        }
-        System.out.println(binario.length());
-        return binario;
     }
 
     public static void limpiar() {
