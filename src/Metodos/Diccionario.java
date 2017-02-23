@@ -13,16 +13,7 @@ import java.util.ArrayList;
  */
 public class Diccionario {
 
-    public static void main(String[] args) {
-        for (int i = 0; i < diccionario.length; i++) {
-            if (diccionario[i][1] == "ù") {
-                System.out.println(diccionario[i][0]);
-            }
-
-        }
-    }
-
-    public static String[][] diccionario = {
+    public static String[][] alpha = {
         {"0", "[NUL]"},
         {"1", "☺"},
         {"2", "♥"},
@@ -88,6 +79,7 @@ public class Diccionario {
         {"62", ">"},
         {"63", "?"},
         {"64", "@"},
+        {"65", "A"},
         {"66", "B"},
         {"67", "C"},
         {"68", "D"},

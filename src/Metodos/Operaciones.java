@@ -37,52 +37,21 @@ public class Operaciones {
         String valorConAnd = null;
 
         for (int i = 0; i < contenido.length(); i++) {
+
             caracter = contenido.charAt(i);
 
             valorEnAscii = caracterAAscii(caracter);
             ascii.add(valorEnAscii);
-//            System.out.print("valor ascii " + valorEnAscii);
 
             valorEnBinario = asciiABinario(valorEnAscii);
             binarios.add(valorEnBinario);
-//            System.out.print(" valor binario " + valorEnBinario);
 
             valorConAnd = aplicarAndConLetraG(valorEnBinario);
-//            System.out.print(" valor con and " + valorConAnd + "\n");
-//            System.out.println("ASCCI" + this.binarioAAscii(valorConAnd));
             aplicandoAndConG.add(valorConAnd);
         }
         recorrerDosIzq();
 
         return binarioACaracter();
-    }
-
-    /**
-     * Método para convertir los binarios a CARACTER
-     *
-     * @return String valor del binario en CARACTER
-     */
-    public String binarioACaracter() {
-        int resultado = 0;
-        String asciiResultado = "";
-        String aux = "";
-        String mensajeEncriptado = "";
-        for (int i = 0; i < tablaConRecorrido.size(); i++) {
-            aux = (String) tablaConRecorrido.get(i);
-            resultado = binarioAAscii(aux);
-
-            for (int j = 0; j < Diccionario.diccionario.length; j++) {
-                if (Integer.parseInt(Diccionario.diccionario[j][0]) == resultado) {
-                    System.out.println(Diccionario.diccionario[j][1]);
-                    asciiResultado = Diccionario.diccionario[j][1];
-                }
-
-            }
-            asciiFinal.add(resultado);
-            mensajeEncriptado = mensajeEncriptado + asciiResultado;
-
-        }
-        return mensajeEncriptado;
     }
 
     /**
@@ -110,6 +79,34 @@ public class Operaciones {
     }
 
     /**
+     * Método para convertir los binarios a CARACTER
+     *
+     * @return String valor del binario en CARACTER
+     */
+    public String binarioACaracter() {
+        int resultado = 0;
+        String asciiResultado = "";
+        String aux = "";
+        String mensajeEncriptado = "";
+        for (int i = 0; i < tablaConRecorrido.size(); i++) {
+            aux = (String) tablaConRecorrido.get(i);
+            resultado = binarioAAscii(aux);
+
+            for (int j = 0; j < Diccionario.alpha.length; j++) {
+                if (Integer.parseInt(Diccionario.alpha[j][0]) == resultado) {
+                    System.out.println(Diccionario.alpha[j][1]);
+                    asciiResultado = Diccionario.alpha[j][1];
+                }
+
+            }
+            asciiFinal.add(resultado);
+            mensajeEncriptado = mensajeEncriptado + asciiResultado;
+
+        }
+        return mensajeEncriptado;
+    }
+
+    /**
      * Aplicación de la operación AND con el Binario de la letra g (1100111)
      *
      * @param binario
@@ -119,6 +116,7 @@ public class Operaciones {
         String resultado = "";
         String bitBinario = null;
         String bitBinarioG = null;
+
         for (int i = 0; i < binario.length(); i++) {
             bitBinario = String.valueOf(binario.charAt(i));
             bitBinarioG = String.valueOf(gBinario.charAt(i));

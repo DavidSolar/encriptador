@@ -119,7 +119,7 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel1.setText("Clave: g (1100111)");
 
-        btnDesencriptar.setText("Desencriptar >>");
+        btnDesencriptar.setText("<< Desencriptar");
         btnDesencriptar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDesencriptarActionPerformed(evt);
@@ -184,7 +184,7 @@ public class Principal extends javax.swing.JFrame {
             areaMensajeEncriptado.setText(op.encriptarContenido(mensaje));
             mostrar();
         } else {
-            JOptionPane.showMessageDialog(null, "Debe introducior un mensaje", "Alerta", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Debe introducior un mensaje a encriptar", "Alerta", JOptionPane.ERROR_MESSAGE);
 //            JOptionPane.showMessageDialog(null, "Este es un mensaje de Advertencia","WARNING_MESSAGE", JOptionPane.WARNING_MESSAGE);
         }
 
@@ -195,14 +195,14 @@ public class Principal extends javax.swing.JFrame {
 //        tblDatos.setModel(new DefaultTableModel());
 //        op.limpiar();
 //
-//        String mensaje = areaMensaje.getText();
+//        String mensaje = areaMensajeEncriptado.getText();
 //
 //        /* Proceso de desencriptado */
 //        if (!mensaje.isEmpty()) {
-//            areaMensajeEncriptado.setText(op.encriptarContenido(mensaje));
+//            areaMensaje.setText(op.desencriptarContenido(mensaje));
 //            mostrar();
 //        } else {
-//            JOptionPane.showMessageDialog(null, "Debe introducior un mensaje", "Alerta", JOptionPane.ERROR_MESSAGE);
+//            JOptionPane.showMessageDialog(null, "Debe introducior un mensaje a desencriptar", "Alerta", JOptionPane.ERROR_MESSAGE);
 //        }
     }//GEN-LAST:event_btnDesencriptarActionPerformed
 
